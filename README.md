@@ -94,6 +94,6 @@ Used TIMESTAMPDIFF to compute the number of months between date_joined and the c
 The avg_profit_per_transaction is calculated as 0.1% of the average transaction value. The stated CLV formula scales this profit across the customer’s monthly activity level.
 4. Ordered by estimated_clv in descending order to prioritize high-value users.
 
-CHALLENGES AND RESOLUTION
+CHALLENGES AND RESOLUTION 
 Precision in Calculations:
 Initially, combining profit per transaction and CLV logic directly caused inaccuracies and division by zero errors, wrapping calculations in NULLIF() ensured we avoided division errors while maintaining logical accuracy.
