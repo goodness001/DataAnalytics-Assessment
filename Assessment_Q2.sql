@@ -3,8 +3,9 @@ WITH cust_counts AS (
     SELECT 
         owner_id,
         DATE_FORMAT(transaction_date, '%Y-%m') AS month, -- Extract year-month from transaction date
-        COUNT(DISTINCT id) AS tran_count
-    FROM savings_savingsaccount
+        COUNT(DISTINCT b.id) AS tran_count
+    FROM users_customuser a, savings_savingsaccount b
+    where a.id = b.owner_id
     -- WHERE transaction_status = 'success'
     GROUP BY owner_id, month
 ),
